@@ -1,6 +1,8 @@
 ---
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
+
+const pageTitle = "Welcome to My Astro Site";
 ---
 
 <div id="container">
@@ -11,7 +13,7 @@ import background from '../assets/background.svg';
 				><img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" /></a
 			>
 			<h1>
-				My Astro Site
+				{pageTitle}
 			</h1>
 			<section id="links">
 				<a class="button" href="https://docs.astro.build">Read our docs</a>
