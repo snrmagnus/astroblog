@@ -19,6 +19,10 @@ const skills = [
   { name: "JavaScript", level: "Intermediate" },
   { name: "Astro", level: "Beginner" },
 ];
+
+const happy = true;
+const finishedTutorial = false;
+const goal = 3
 ---
 
 <Layout>
@@ -42,4 +46,18 @@ const skills = [
   <p>My skills are:</p>
 
   <ul>{skills.map((skill) => <li>{skill.name}</li>)}</ul>
+
+  {happy && <p>I am happy to be learning Astro!</p>}
+
+  {!finishedTutorial ? (
+    <p>I am not finished with the tutorial yet, but I am making progress!</p>
+  ) : (
+    <p>I have finished the tutorial!</p>
+  )}
+
+  {goal >= 3 ? (
+    <p>I have achieved my goal of learning the basics of Astro!</p>
+  ) : (
+    <p>I have not yet achieved my goal of learning the basics of Astro.</p>
+  )}
 </Layout>
