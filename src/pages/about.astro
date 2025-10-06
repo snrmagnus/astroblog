@@ -5,6 +5,20 @@ import Layout from '../layouts/Layout.astro';
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 
 const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Magnus",
+  country: "Portugal",
+  occupation: "Web Developer",
+  hobbies: ["hiking", "reading", "coding"],
+}
+
+const skills = [
+  { name: "HTML", level: "Advanced" },
+  { name: "CSS", level: "Advanced" },
+  { name: "JavaScript", level: "Intermediate" },
+  { name: "Astro", level: "Beginner" },
+];
 ---
 
 <Layout>
@@ -14,4 +28,18 @@ const pageTitle = "About Me";
   <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
 
   <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+
+  <p>Here are a few facts about me:</p>
+
+  <ul>
+    <li>My name is {identity.firstName}</li>
+    <li>I live in {identity.country} and I work as a {identity.occupation}</li>
+    {identity.hobbies.map(hobby => (
+      <li>I enjoy {hobby}</li>
+    ))}
+  </ul>
+
+  <p>My skills are:</p>
+
+  <ul>{skills.map((skill) => <li>{skill.name}</li>)}</ul>
 </Layout>
