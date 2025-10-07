@@ -1,3 +1,9 @@
-<a href="/">Home</a>
-<a href="/about">About</a>
-<a href="/blog/">Blog</a>
+---
+import NavLinks from "../atoms/NavLinks.astro";
+---
+
+<nav>
+  <NavLinks name="Home" url="/" />
+  <NavLinks name="About" url="/about/" />
+  <NavLinks name="Blog" url="/blog/" />
+</nav>
