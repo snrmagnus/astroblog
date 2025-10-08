@@ -1,4 +1,5 @@
 interface Post {
+  id: string;
   url: string;
   frontmatter: {
     title: string;
