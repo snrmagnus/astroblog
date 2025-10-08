@@ -1,9 +1,9 @@
 ---
-import NavLinks from "../atoms/NavLinks.astro";
+import NavLink from "../atoms/NavLink.astro";
 ---
 
-<nav>
-  <NavLinks name="Home" url="/" />
-  <NavLinks name="About" url="/about/" />
-  <NavLinks name="Blog" url="/blog/" />
-</nav>
+<div class="lg-w-auto m-0 hidden w-full lg:static lg:ml-20 lg:block lg:bg-none">
+  <NavLink name="Home" url="/" />
+  <NavLink name="About" url="/about/" />
+  <NavLink name="Blog" url="/blog/" />
+</div>
