@@ -135,3 +135,7 @@ body {
 * {
   box-sizing: border-box;
 }
+
+:has(#menu-button[aria-expanded="true"]) {
+  display: unset;
+}

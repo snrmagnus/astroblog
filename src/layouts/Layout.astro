@@ -26,13 +26,7 @@ import Menu from "@/components/organisms/src/components/Menu.astro";
     <Footer />
 
     <script>
-      const menu = document.querySelector("#menu-button");
-
-      menu?.addEventListener("click", () => {
-        const expanded = menu.getAttribute("aria-expanded") === "true" || false;
-        menu.setAttribute("aria-expanded", String(!expanded));
-        console.log(menu);
-      });
+      import "../scripts/menu.js";
     </script>
   </body>
 </html>
