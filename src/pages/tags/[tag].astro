@@ -1,0 +1,36 @@
+---
+import BlogPost from "@/components/molecules/BlogPost.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const allPosts = Object.values(
+    import.meta.glob("../posts/*.md", { eager: true }),
+  ) as Post[];
+
+  return [
+    { params: { tag: "astro" }, props: { posts: allPosts } },
+    { params: { tag: "successes" }, props: { posts: allPosts } },
+    { params: { tag: "community" }, props: { posts: allPosts } },
+    { params: { tag: "blogging" }, props: { posts: allPosts } },
+    { params: { tag: "setbacks" }, props: { posts: allPosts } },
+    { params: { tag: "learning in public" }, props: { posts: allPosts } },
+  ];
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+
+const filteredPosts = posts.filter((post: Post) =>
+  post.frontmatter.tags?.includes(tag),
+);
+
+console.log({ tag, posts });
+---
+
+<Layout pageTitle={tag}>
+  <p>Posts tagged with {tag}</p>
+
+  <ul>
+    {filteredPosts.map((post: Post) => <BlogPost post={post} />)}
+  </ul>
+</Layout>
