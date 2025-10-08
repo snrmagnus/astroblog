@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -11,7 +11,7 @@ const identity = {
   country: "Portugal",
   occupation: "Web Developer",
   hobbies: ["hiking", "reading", "coding"],
-}
+};
 
 const skills = [
   { name: "HTML", level: "Advanced" },
@@ -22,7 +22,7 @@ const skills = [
 
 const happy = true;
 const finishedTutorial = false;
-const goal = 3
+const goal = 3;
 
 const skillColor = "text-red-500";
 const fontWeight = "font-bold";
@@ -30,38 +30,52 @@ const textCase = "uppercase";
 ---
 
 <Layout>
-	<h1 class="text-6xl text-purple-500">{pageTitle}</h1>
+  <h1 class="text-6xl text-purple-500">{pageTitle}</h1>
   <h2>... and my new astro site!</h2>
 
-  <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+  <p class="flex mt-1">
+    I am working through Astro's introductory tutorial. This is the second page
+    on my website, and it's the first one I built myself!
+  </p>
 
-  <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+  <p>
+    This site will update as I complete more of the tutorial, so keep checking
+    back and see how my journey is going!
+  </p>
 
   <p>Here are a few facts about me:</p>
 
   <ul>
     <li>My name is {identity.firstName}</li>
     <li>I live in {identity.country} and I work as a {identity.occupation}</li>
-    {identity.hobbies.map(hobby => (
-      <li>I enjoy {hobby}</li>
-    ))}
+    {identity.hobbies.map((hobby) => <li>I enjoy {hobby}</li>)}
   </ul>
 
   <p>My skills are:</p>
 
-  <ul>{skills.map((skill) => <li class=`${skillColor} ${fontWeight} ${textCase}`>{skill.name}</li>)}</ul>
+  <ul>
+    {
+      skills.map((skill) => (
+        <li class={`${skillColor} ${fontWeight} ${textCase}`}>{skill.name}</li>
+      ))
+    }
+  </ul>
 
   {happy && <p>I am happy to be learning Astro!</p>}
 
-  {!finishedTutorial ? (
-    <p>I am not finished with the tutorial yet, but I am making progress!</p>
-  ) : (
-    <p>I have finished the tutorial!</p>
-  )}
+  {
+    !finishedTutorial ? (
+      <p>I am not finished with the tutorial yet, but I am making progress!</p>
+    ) : (
+      <p>I have finished the tutorial!</p>
+    )
+  }
 
-  {goal >= 3 ? (
-    <p>I have achieved my goal of learning the basics of Astro!</p>
-  ) : (
-    <p>I have not yet achieved my goal of learning the basics of Astro.</p>
-  )}
+  {
+    goal >= 3 ? (
+      <p>I have achieved my goal of learning the basics of Astro!</p>
+    ) : (
+      <p>I have not yet achieved my goal of learning the basics of Astro.</p>
+    )
+  }
 </Layout>
