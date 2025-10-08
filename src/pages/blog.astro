@@ -1,22 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageTitle = "My Astro Learning Blog";
+
+const allPosts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true }),
+) as Post[];
 ---
 
-<Layout pageTitle="My Astro Learning Blog">
+<Layout pageTitle={pageTitle}>
   <p>This is where I will post about my journey learning Astro.</p>
 
   <ul>
-    <li>
-      <a href="/posts/post-1">Post 1</a>
-    </li>
-    <li>
-      <a href="/posts/post-2">Post 2</a>
-    </li>
-    <li>
-      <a href="/posts/post-3">Post 3</a>
-    </li>
+    {
+      allPosts.map((post: Post) => (
+        <li>
+          <a href={post.url}>{post.frontmatter.title}</a>
+        </li>
+      ))
+    }
   </ul>
 </Layout>
