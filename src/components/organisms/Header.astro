@@ -1,9 +1,16 @@
 ---
 import Menu from "../atoms/Menu.astro";
 import Navigation from "../molecules/Navigation.astro";
+import ThemeIcon from "../molecules/ThemeIcon.astro";
 ---
 
 <header>
-  <Menu />
-  <Navigation />
+  <nav>
+    <div class="flex justify-between">
+      <ThemeIcon />
+      <Menu />
+    </div>
+
+    <Navigation />
+  </nav>
 </header>
