@@ -1,14 +1,14 @@
 ---
-import Menu from "../atoms/Menu.astro";
+import { Button } from "../atoms/Button";
+import ModeToggle from "../molecules/ModeToggle";
 import Navigation from "../molecules/Navigation.astro";
-import ThemeIcon from "../molecules/ThemeIcon.astro";
 ---
 
 <header>
   <nav>
     <div class="flex justify-between">
-      <ThemeIcon />
-      <Menu />
+      <Button>Menu</Button>
+      <ModeToggle client:load />
     </div>
 
     <Navigation />
