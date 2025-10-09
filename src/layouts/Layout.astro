@@ -11,7 +11,10 @@ import Header from "@/components/organisms/Header.astro";
 const { pageTitle } = Astro.props;
 ---
 
-<!doctype html>
+<script is:inline>
+  import "../scripts/theme.js";
+</script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
