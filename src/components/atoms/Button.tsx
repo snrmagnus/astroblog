@@ -1,6 +1,7 @@
-import * as Preact from "preact";
-import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
+import type { ComponentProps } from "react";
+
+import { Slot } from "@radix-ui/react-slot";
 
 import { cn } from "@/lib/utils";
 
@@ -42,7 +43,7 @@ function Button({
   size,
   asChild = false,
   ...props
-}: Preact.ComponentProps<"button"> &
+}: ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean;
   }) {

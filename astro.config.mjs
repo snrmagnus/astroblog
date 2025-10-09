@@ -2,7 +2,7 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@tailwindcss/vite";
 
-import preact from "@astrojs/preact";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,5 +12,5 @@ export default defineConfig({
     plugins: [tailwind()],
   },
 
-  integrations: [preact()],
+  integrations: [react()],
 });
